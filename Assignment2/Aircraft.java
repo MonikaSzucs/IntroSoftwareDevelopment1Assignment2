@@ -48,11 +48,11 @@ public class Aircraft
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public int getModelYear(int theModelYear)
+    public void setModelYear(int theModelYear)
     {
         // put your code here
         if((theModelYear>=1920) && (theModelYear<=2018)){
-            return theModelYear;
+            modelYear = theModelYear;
         }
         else if (theModelYear<1920) {
             throw new IllegalArgumentException("Sorry, the model year " + theModelYear + " is too old.");
@@ -69,11 +69,11 @@ public class Aircraft
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public int getNumberOfEngines(int theNumberOfEngines)
+    public void setNumberOfEngines(int theNumberOfEngines)
     {
         // put your code here
         if((theNumberOfEngines>=1) && (theNumberOfEngines<=4)){
-            return theNumberOfEngines;
+            numberOfEngines = theNumberOfEngines;
         }
         else if (theNumberOfEngines<1) {
             throw new IllegalArgumentException("Sorry, 0 is too few engines for an aircraft");
@@ -82,5 +82,55 @@ public class Aircraft
             throw new IllegalArgumentException("Sorry, " + theNumberOfEngines + " is too many engines for an aircraft.");
         }
 
+    }
+    
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    public void setManufacturer(String theManufacturer)
+    {
+        // put your code here
+        if(theManufacturer != null || theManufacturer != ""){
+            manufacturer = theManufacturer;
+        }
+        else {
+            throw new IllegalArgumentException("The " + theManufacturer + " is not valid.");
+        }
+
+    }
+    
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    public void setModelName(String theModelName)
+    {
+        // put your code here
+        if(theModelName != null || theModelName != ""){
+            modelName = theModelName;
+        }
+        else {
+            throw new IllegalArgumentException("The " + theModelName + " is not valid.");
+        }
+
+    }
+    
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    public void setJet(boolean theJet)
+    {
+        // put your code here
+        if(theJet){
+            jet = theJet;
+        }
     }
 }
