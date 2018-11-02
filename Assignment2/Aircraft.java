@@ -2,93 +2,93 @@
 /**
  * Write a description of class Aircraft here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Monika Szucs
+ * @version Novemeber 1, 2018
  */
 public class Aircraft
 {
+    public static  final int   EARLIEST_YEAR = 1920;
+    public static  final int   LATEST_YEAR = 2018;
+    public static  final int   MIN_ENGINES = 1;
+    public static  final int   MAX_ENGINES = 4;
+    
     // instance variables - replace the example below with your own
-    private int modelYear = 2018;
-    private String manufacturer;
-    private String modelName;
-    private int numberOfEngines = 1;
-    private boolean jet = false;
-    private String specificationsPage;
+    private int     modelYear           =   2018;
+    private String  manufacturer;
+    private String  modelName;
+    private int     numEngines          =   1;
+    private boolean jet                 =   false;
+    private String  specsPage;
 
     /**
      * Constructor for objects of class Aircraft
+     * 
+     * @param manufacturer is the company name who manufactured the product
+     * @param modelName consists of the model name
+     * @param modelYear is the year when the product was created
+     * @param numberOfEngines is the number of engines the Aircraft will have
+     * @param jet is checking to see if the Aircraft is a jet or not
+     * @param specificationsPage is a link to the Aircraft specifications
+     * 
      */
     public Aircraft(String manufacturer, String modelName, int modelYear, int numberOfEngines, boolean jet, String specificationsPage)
     {
         // initialise instance variables
-
+        setManufacturer(manufacturer);
+        setModelName(modelName);
+        setModelYear(modelYear);
+        setNumEngines(numEngines);
+        setJet(jet);
+        setSpecsPage(specsPage);
     }
 
     /**
      * Constructor for objects of class Aircraft
+     * @param manufacturer is the company name who manufactured the product
+     * @param modelName consists of the model name
+     * @param specificationsPage is a link to the Aircraft specifications
+     * 
      */
     public Aircraft(String manufacturer, String modelName, String specificationsPage)
     {
         // initialise instance variables
-
+        setManufacturer(manufacturer);
+        setModelName(modelName);
+        setSpecsPage(specsPage);
     }
 
     /**
      * Constructor for objects of class Aircraft
+     * @param manufacturer is the company name who manufactured the product
+     * @param modelName consists of the model name
+     * @param modelYear is the year when the product was created
+     * @param specificationsPage is a link to the Aircraft specifications
+     * 
      */
     public Aircraft(String manufacturer, String modelName, int modelYear, String specificationsPage)
     {
         // initialise instance variables
-
+        setManufacturer(manufacturer);
+        setModelName(modelName);
+        setModelYear(modelYear);
+        setSpecsPage(specsPage);
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Accessor
+     * 
+     * @return the manufacturer name
+     * 
      */
-    public void setModelYear(int theModelYear)
-    {
-        // put your code here
-        if((theModelYear>=1920) && (theModelYear<=2018)){
-            modelYear = theModelYear;
-        }
-        else if (theModelYear<1920) {
-            throw new IllegalArgumentException("Sorry, the model year " + theModelYear + " is too old.");
-        }
-        else {
-            throw new IllegalArgumentException("Sorry, the model year " + theModelYear + " is in the future.");
-        }
 
+    public String getManufacturer(){
+        return this.manufacturer;
     }
-    
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public void setNumberOfEngines(int theNumberOfEngines)
-    {
-        // put your code here
-        if((theNumberOfEngines>=1) && (theNumberOfEngines<=4)){
-            numberOfEngines = theNumberOfEngines;
-        }
-        else if (theNumberOfEngines<1) {
-            throw new IllegalArgumentException("Sorry, 0 is too few engines for an aircraft");
-        }
-        else {
-            throw new IllegalArgumentException("Sorry, " + theNumberOfEngines + " is too many engines for an aircraft.");
-        }
 
-    }
-    
     /**
-     * An example of a method - replace this comment with your own
+     * Mutator
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param  theManufacturer sets the manufacturers name
      */
     public void setManufacturer(String theManufacturer)
     {
@@ -101,12 +101,22 @@ public class Aircraft
         }
 
     }
-    
+
     /**
-     * An example of a method - replace this comment with your own
+     * Accessor
+     * 
+     * @return the model name of the Aircraft
+     * 
+     */
+
+    public String getModelName(){
+        return this.modelName;
+    }
+
+    /**
+     * Mutator
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param  theModelName is the model name of the Aircraft
      */
     public void setModelName(String theModelName)
     {
@@ -119,12 +129,90 @@ public class Aircraft
         }
 
     }
-    
+
     /**
-     * An example of a method - replace this comment with your own
+     * Accessor
+     * 
+     * @return the model year of the Aircraft
+     * 
+     */
+
+    public int getModelYear(){
+        return this.modelYear;
+    }
+
+    /**
+     * Mutator
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param  theModelYear is the year of the model
+     * 
+     */
+    public void setModelYear(int theModelYear)
+    {
+        // put your code here
+        if((theModelYear>=EARLIEST_YEAR) && (theModelYear<=LATEST_YEAR)){
+            modelYear = theModelYear;
+        }
+        else if (theModelYear<EARLIEST_YEAR) {
+            throw new IllegalArgumentException("Sorry, the model year " + theModelYear + " is too old.");
+        }
+        else {
+            throw new IllegalArgumentException("Sorry, the model year " + theModelYear + " is in the future.");
+        }
+
+    }
+
+    /**
+     * Accessor
+     * 
+     * @return the number of engines in the Aircraft
+     * 
+     */
+
+    public int getNumEngines(){
+        return this.numEngines;
+    }
+
+    /**
+     * Mutator
+     *
+     * @param  theNumberOfEngines is the number of engines in the Aircraft
+     * 
+     */
+    public void setNumEngines(int theNumEngines)
+    {
+        // put your code here
+        if((theNumEngines>=MIN_ENGINES) && (theNumEngines<=MAX_ENGINES)){
+            numEngines = theNumEngines;
+        }
+        else if (theNumEngines<MIN_ENGINES) {
+            throw new IllegalArgumentException("Sorry, " + theNumEngines + " is too few engines for an aircraft.");
+        }
+        else if (theNumEngines>MAX_ENGINES){
+            throw new IllegalArgumentException("Sorry, " + theNumEngines + " is too many engines for an aircraft.");
+        }
+        else {
+            throw new IllegalArgumentException("Sorry, " + theNumEngines + " is too many engines for an aircraft.");
+        }
+
+    }
+
+    /**
+     * Accessor
+     * 
+     * @return the number of engines in the Aircraft
+     * 
+     */
+
+    public Boolean getJet(){
+        return this.jet;
+    }
+
+    /**
+     * Mutator
+     *
+     * @param  theJet checks to see if the Aircraft is a jet or not
+     * 
      */
     public void setJet(boolean theJet)
     {
@@ -133,4 +221,51 @@ public class Aircraft
             jet = theJet;
         }
     }
+
+    /**
+     * Accessor
+     * 
+     * @return the number of engines in the Aircraft
+     * 
+     */
+
+    public String getSpecsPage(){
+        return this.specsPage;
+    }
+
+    /**
+     * Mutator
+     *
+     * @param theSpecificationsPage is a link to the specifications of the Aircraft
+     * 
+     */
+    public void setSpecsPage(String theSpecsPage)
+    {
+        // put your code here
+        if(theSpecsPage != null){
+            specsPage = theSpecsPage;
+        } else if(theSpecsPage != ""){
+            throw new IllegalArgumentException("The Specifications Page is not valid.");
+        }
+        else {
+            throw new IllegalArgumentException("The Specifications Page is not valid.");
+        }
+    }
+    
+    public String getAircraftDetails()
+    {
+       if(jet){
+           if(numEngines>1){
+            return(modelYear + " " + modelName + " manufactured by " + manufacturer + " with " + numEngines + " engine. Specifications are available at " + specsPage);
+           }
+           else {
+            return(modelYear + " " + modelName + " manufactured by " + manufacturer + " with " + numEngines + " engines. Specifications are available at " + specsPage);
+           }
+           
+       }
+       else {
+           return(modelYear + " " + modelName + " manufactured by " + manufacturer + " with " + numEngines + " engine. Specifications are available at " + specsPage);
+       }
+    }
+
 }
