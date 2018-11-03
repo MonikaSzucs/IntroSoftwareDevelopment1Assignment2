@@ -31,7 +31,7 @@ public class Aircraft
      * @param specificationsPage is a link to the Aircraft specifications
      * 
      */
-    public Aircraft(String manufacturer, String modelName, int modelYear, int numOfEngines, boolean jet, String specificationsPage)
+    public Aircraft(String manufacturer, String modelName, int modelYear, int numOfEngines, boolean jet, String specsPage)
     {
         // initialise instance variables
         setManufacturer(manufacturer);
@@ -49,7 +49,7 @@ public class Aircraft
      * @param specificationsPage is a link to the Aircraft specifications
      * 
      */
-    public Aircraft(String manufacturer, String modelName, String specificationsPage)
+    public Aircraft(String manufacturer, String modelName, String specsPage)
     {
         // initialise instance variables
         setManufacturer(manufacturer);
@@ -65,7 +65,7 @@ public class Aircraft
      * @param specificationsPage is a link to the Aircraft specifications
      * 
      */
-    public Aircraft(String manufacturer, String modelName, int modelYear, String specificationsPage)
+    public Aircraft(String manufacturer, String modelName, int modelYear, String specsPage)
     {
         // initialise instance variables
         setManufacturer(manufacturer);
@@ -93,11 +93,13 @@ public class Aircraft
     public void setManufacturer(String theManufacturer)
     {
         // put your code here
-        if(theManufacturer != null || theManufacturer != ""){
+        if(theManufacturer != null && theManufacturer.equals("")){
             manufacturer = theManufacturer;
+        } if(theManufacturer == null){
+            throw new IllegalArgumentException("The Manufacturer is not valid.");
         }
         else {
-            throw new IllegalArgumentException("The " + theManufacturer + " is not valid.");
+            throw new IllegalArgumentException("The Manufacturer is not set.");
         }
 
     }
@@ -121,7 +123,7 @@ public class Aircraft
     public void setModelName(String theModelName)
     {
         // put your code here
-        if(theModelName != null || theModelName != ""){
+        if(theModelName != null && theModelName != ""){
             modelName = theModelName;
         }
         else {
@@ -242,11 +244,9 @@ public class Aircraft
     public void setSpecsPage(String theSpecsPage)
     {
         // put your code here
-        if(theSpecsPage != null){
+        if(theSpecsPage != null && !theSpecsPage.equals("")){
             specsPage = theSpecsPage;
-        } else if(theSpecsPage != ""){
-            throw new IllegalArgumentException("The Specifications Page is not valid.");
-        }
+        } 
         else {
             throw new IllegalArgumentException("The Specifications Page is not valid.");
         }
