@@ -31,7 +31,7 @@ public class Aircraft
      * @param specificationsPage is a link to the Aircraft specifications
      * 
      */
-    public Aircraft(String manufacturer, String modelName, int modelYear, int numberOfEngines, boolean jet, String specificationsPage)
+    public Aircraft(String manufacturer, String modelName, int modelYear, int numOfEngines, boolean jet, String specificationsPage)
     {
         // initialise instance variables
         setManufacturer(manufacturer);
@@ -204,7 +204,7 @@ public class Aircraft
      * 
      */
 
-    public Boolean getJet(){
+    public Boolean isJet(){
         return this.jet;
     }
 

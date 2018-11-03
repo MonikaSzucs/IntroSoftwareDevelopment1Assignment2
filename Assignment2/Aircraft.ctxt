@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=Aircraft
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Aircraft\ here.\r\n\r\n\ @author\ Monika\ Szucs\r\n\ @version\ Novemeber\ 1,\ 2018\r\n
-comment1.params=manufacturer\ modelName\ modelYear\ numberOfEngines\ jet\ specificationsPage
+comment1.params=manufacturer\ modelName\ modelYear\ numOfEngines\ jet\ specificationsPage
 comment1.target=Aircraft(java.lang.String,\ java.lang.String,\ int,\ int,\ boolean,\ java.lang.String)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Aircraft\r\n\ \r\n\ @param\ manufacturer\ is\ the\ company\ name\ who\ manufactured\ the\ product\r\n\ @param\ modelName\ consists\ of\ the\ model\ name\r\n\ @param\ modelYear\ is\ the\ year\ when\ the\ product\ was\ created\r\n\ @param\ numberOfEngines\ is\ the\ number\ of\ engines\ the\ Aircraft\ will\ have\r\n\ @param\ jet\ is\ checking\ to\ see\ if\ the\ Aircraft\ is\ a\ jet\ or\ not\r\n\ @param\ specificationsPage\ is\ a\ link\ to\ the\ Aircraft\ specifications\r\n\ \r\n
 comment10.params=
@@ -11,7 +11,7 @@ comment11.params=theNumEngines
 comment11.target=void\ setNumEngines(int)
 comment11.text=\r\n\ Mutator\r\n\r\n\ @param\ \ theNumberOfEngines\ is\ the\ number\ of\ engines\ in\ the\ Aircraft\r\n\ \r\n
 comment12.params=
-comment12.target=java.lang.Boolean\ getJet()
+comment12.target=java.lang.Boolean\ isJet()
 comment12.text=\r\n\ Accessor\r\n\ \r\n\ @return\ the\ number\ of\ engines\ in\ the\ Aircraft\r\n\ \r\n
 comment13.params=theJet
 comment13.target=void\ setJet(boolean)
