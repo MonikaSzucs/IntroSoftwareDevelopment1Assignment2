@@ -31,7 +31,7 @@ public class Aircraft
      * @param specificationsPage is a link to the Aircraft specifications
      * 
      */
-    public Aircraft(String manufacturer, String modelName, int modelYear, int numOfEngines, boolean jet, String specsPage)
+    public Aircraft(String manufacturer, String modelName, int modelYear, int numEngines, boolean jet, String specsPage)
     {
         // initialise instance variables
         setManufacturer(manufacturer);
@@ -93,9 +93,9 @@ public class Aircraft
     public void setManufacturer(String theManufacturer)
     {
         // put your code here
-        if(theManufacturer != null && theManufacturer.equals("")){
+        if(theManufacturer != null && !theManufacturer.equals("")){
             manufacturer = theManufacturer;
-        } if(theManufacturer == null){
+        } else if(theManufacturer == null){
             throw new IllegalArgumentException("The Manufacturer is not valid.");
         }
         else {
@@ -123,11 +123,13 @@ public class Aircraft
     public void setModelName(String theModelName)
     {
         // put your code here
-        if(theModelName != null && theModelName != ""){
+        if(theModelName != null && !theModelName.equals("")){
             modelName = theModelName;
+        } else if(theModelName == null){
+            throw new IllegalArgumentException("The Model Name is not valid.");
         }
         else {
-            throw new IllegalArgumentException("The " + theModelName + " is not valid.");
+            throw new IllegalArgumentException("The Model Name is not set.");
         }
 
     }
@@ -184,7 +186,7 @@ public class Aircraft
     public void setNumEngines(int theNumEngines)
     {
         // put your code here
-        if((theNumEngines>=MIN_ENGINES) && (theNumEngines<=MAX_ENGINES)){
+        if(theNumEngines>=MIN_ENGINES && theNumEngines<=MAX_ENGINES){
             numEngines = theNumEngines;
         }
         else if (theNumEngines<MIN_ENGINES) {
@@ -247,8 +249,11 @@ public class Aircraft
         if(theSpecsPage != null && !theSpecsPage.equals("")){
             specsPage = theSpecsPage;
         } 
-        else {
+        else if(theSpecsPage == null){
             throw new IllegalArgumentException("The Specifications Page is not valid.");
+        }
+        else {
+            throw new IllegalArgumentException("The Specifications Page is not set.");
         }
     }
     
