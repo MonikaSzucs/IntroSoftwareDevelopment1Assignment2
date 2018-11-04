@@ -259,17 +259,23 @@ public class Aircraft
     
     public String getAircraftDetails()
     {
-       if(jet){
+       if(!jet){
            if(numEngines>1){
-            return(modelYear + " " + modelName + " manufactured by " + manufacturer + " with " + numEngines + " engine. Specifications are available at " + specsPage);
+            return(modelYear + " " + modelName + " manufactured by " + manufacturer + " with " + numEngines + " engines. Specifications are available at " + specsPage + ".");
            }
            else {
-            return(modelYear + " " + modelName + " manufactured by " + manufacturer + " with " + numEngines + " engines. Specifications are available at " + specsPage);
+            return(modelYear + " " + modelName + " manufactured by " + manufacturer + " with " + numEngines + " engine. Specifications are available at " + specsPage + ".");
            }
            
        }
        else {
-           return(modelYear + " " + modelName + " manufactured by " + manufacturer + " with " + numEngines + " engine. Specifications are available at " + specsPage);
+           if(numEngines>1){
+            return(modelYear + " " + modelName + " manufactured by " + manufacturer + " with " + numEngines + " jet engines. Specifications are available at " + specsPage + ".");
+           }
+           else {
+            return(modelYear + " " + modelName + " manufactured by " + manufacturer + " with " + numEngines + " jet engine. Specifications are available at " + specsPage + ".");
+           }
+           
        }
     }
 
